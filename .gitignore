@@ -1,0 +1,27 @@
+# KiCad temporary and backup files
+*.lck
+*-backups/
+.history/
+_autosave-*
+*.kicad_prl
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+fp-info-cache
+
+# Generated locally by tools/gen_pins.py and CI (netlist, ERC report)
+build/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+~$*
+.vscode/
+.idea/

@@ -1,0 +1,8 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "LD39200")(type "KiCad")(uri "${KIPRJMOD}/Libraries/LD39200")(options "")(descr ""))
+  (lib (name "LSM115JE3_TR13")(type "KiCad")(uri "${KIPRJMOD}/Libraries/LSM115JE3_TR13")(options "")(descr ""))
+  (lib (name "SWITCH")(type "KiCad")(uri "${KIPRJMOD}/Libraries/1571563-6_SWITCH")(options "")(descr ""))
+  (lib (name "MAIN_LITE")(type "KiCad")(uri "${KIPRJMOD}/Libraries/MAIN_LITE/MAIN_LITE.pretty")(options "")(descr ""))
+  (lib (name "BMI088")(type "KiCad")(uri "${KIPRJMOD}/Libraries/BMI088")(options "")(descr ""))
+)

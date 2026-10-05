@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "BMI088")(type "KiCad")(uri "${KIPRJMOD}/Libraries/BMI088/BMI088.kicad_sym")(options "")(descr ""))
+  (lib (name "LSM115JE3_TR13")(type "KiCad")(uri "${KIPRJMOD}/Libraries/LSM115JE3_TR13/LSM115JE3_TR13.kicad_sym")(options "")(descr ""))
+  (lib (name "MAIN_LITE")(type "KiCad")(uri "${KIPRJMOD}/Libraries/MAIN_LITE/MAIN_LITE.kicad_sym")(options "")(descr ""))
+)
