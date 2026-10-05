@@ -1,0 +1,78 @@
+name: Publish pin model
+
+# On main: verify the committed model against the schematic and, when its
+# content changed since the last release, publish it as a GitHub release
+# tagged pin-model-v<schema_version>.<n> with the YAML, JSON and SHA256SUMS.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-model
+  cancel-in-progress: false
+
+env:
+  KICAD_IMAGE: kicad/kicad:9.0.9@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729
+
+jobs:
+  publish:
+    name: Publish pin model
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Export netlist (KiCad in container)
+        run: tools/kicad_export.sh
+
+      - name: Check committed model matches the schematic
+        run: python3 tools/gen_pins.py --netlist build/netlist.xml --check
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: pin-model-main-${{ github.sha }}
+          path: model/
+          retention-days: 90
+
+      - name: Create release if the model changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          cd model
+          sha256sum mainlite.pins.yaml mainlite.pins.json > SHA256SUMS
+          schema=$(python3 -c 'import json; print(json.load(open("mainlite.pins.json"))["schema_version"])')
+          blob=$(python3 -c 'import json; print(json.load(open("mainlite.pins.json"))["source"]["schematic_git_blob"])')
+          prefix="pin-model-v${schema}."
+          tags=$(gh release list --repo "$REPO" --limit 200 --json tagName --jq '.[].tagName' | grep -F "$prefix" || true)
+          last=$(printf '%s\n' "$tags" | sed -n "s/^pin-model-v${schema}\.\([0-9][0-9]*\)$/\1/p" | sort -n | tail -1)
+          if [ -n "$last" ]; then
+            gh release download "${prefix}${last}" --repo "$REPO" --pattern SHA256SUMS --output "$RUNNER_TEMP/prev.sums"
+            if cmp -s SHA256SUMS "$RUNNER_TEMP/prev.sums"; then
+              echo "Model unchanged since ${prefix}${last}; nothing to publish." | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            next=$((last + 1))
+          else
+            next=0
+          fi
+          tag="${prefix}${next}"
+          printf 'MainLite pin model, schema v%s.\n\nSchematic blob `%s`, commit %s.\n\nFetch: `https://github.com/%s/releases/download/%s/mainlite.pins.yaml`\nFormat: docs/pin-model.md\n' \
+            "$schema" "$blob" "$SHA" "$REPO" "$tag" > "$RUNNER_TEMP/notes.md"
+          gh release create "$tag" mainlite.pins.yaml mainlite.pins.json SHA256SUMS \
+            --repo "$REPO" --target "$SHA" --title "Pin model $tag" --notes-file "$RUNNER_TEMP/notes.md"
+          echo "Published $tag" | tee -a "$GITHUB_STEP_SUMMARY"
