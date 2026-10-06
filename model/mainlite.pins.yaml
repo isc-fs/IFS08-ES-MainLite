@@ -12,7 +12,7 @@ board:
     - "J4"
 source:
   schematic: "IFS08-MainLite/MAIN_LITE.kicad_sch"
-  schematic_git_blob: "11d00d27a8ff98cc346bf427710b3a88a04e1a30"
+  schematic_git_blob: "aa7aa06ffa24eb89b8f2d0b0ea08d03cb18d13b6"
   kicad:
     file_format: 20250114
     generator_version: "9.0"
@@ -34,7 +34,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -78,7 +78,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -93,7 +93,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -108,7 +108,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -223,7 +223,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -238,7 +238,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -253,7 +253,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -268,7 +268,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -313,7 +313,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -527,7 +527,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -602,7 +602,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -617,7 +617,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -632,7 +632,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -647,7 +647,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -692,7 +692,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -815,7 +815,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -830,7 +830,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -845,7 +845,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -860,7 +860,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -905,7 +905,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -920,7 +920,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -935,7 +935,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -950,7 +950,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -965,7 +965,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -980,7 +980,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -995,7 +995,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1010,7 +1010,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1055,7 +1055,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1070,7 +1070,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1085,7 +1085,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1100,7 +1100,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1115,7 +1115,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1130,7 +1130,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1250,7 +1250,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1265,7 +1265,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1440,7 +1440,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1455,7 +1455,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1470,7 +1470,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1485,7 +1485,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1500,7 +1500,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1515,7 +1515,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1530,7 +1530,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1575,7 +1575,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1590,7 +1590,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1669,7 +1669,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1713,7 +1713,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -1884,7 +1884,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2251,7 +2251,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2266,7 +2266,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2311,7 +2311,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2326,7 +2326,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2478,7 +2478,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []
@@ -2493,7 +2493,7 @@ pins:
     class: "nc"
     net: null
     net_auto: false
-    no_connect_flag: false
+    no_connect_flag: true
     role: null
     role_source: null
     backplane: []

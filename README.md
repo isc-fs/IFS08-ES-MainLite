@@ -162,7 +162,7 @@ Per-role use of these pins (which GPIO is which signal on the AMS, ECU or uDV ba
 
 ## 4. Machine-Readable Pin Model
 
-[`model/mainlite.pins.yaml`](model/mainlite.pins.yaml) (JSON twin: [`mainlite.pins.json`](model/mainlite.pins.json)) lists all 144 pins of U5: net, alternate function, whether and where each one leaves the module on J3/J4, and what it connects to on the board. It also describes the CAN, SDMMC, I2C, HSE, VBAT, SWD and USB interfaces. `tools/gen_pins.py` generates it from the schematic; CI fails a PR whose committed model is stale and runs KiCad ERC. Each change that reaches `main` is published as a `pin-model-vX.Y` release, so other repos (e.g. the virtual HIL) can check their pin definitions against a pinned version.
+[`model/mainlite.pins.yaml`](model/mainlite.pins.yaml) (JSON twin: [`mainlite.pins.json`](model/mainlite.pins.json)) lists all 144 pins of U5: net, alternate function, whether and where each one leaves the module on J3/J4, and what it connects to on the board. It also describes the CAN, SDMMC, I2C, HSE, VBAT, SWD and USB interfaces. `tools/gen_pins.py` generates it from the schematic; CI fails a PR whose committed model is stale or whose schematic has KiCad ERC errors. Each change that reaches `main` is published as a `pin-model-vX.Y` release, so other repos (e.g. the virtual HIL) can check their pin definitions against a pinned version.
 
 ```bash
 python3 tools/gen_pins.py        # after any schematic change; commit model/
