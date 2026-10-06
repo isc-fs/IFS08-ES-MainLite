@@ -10,6 +10,8 @@ Hardware design, KiCad schematic and PCB layout of the **MainLite**, the minimal
 [![Microcontroller](https://img.shields.io/badge/MCU-STM32H733ZG%20(ARM%20Cortex--M7)-green.svg)]()
 [![CAN Bus](https://img.shields.io/badge/CAN-3x%20FDCAN%20(TCAN330)-red.svg)]()
 
+[![View Work Order PDF](https://img.shields.io/badge/Work_Order-WO__ES--IFS08-blue?logo=adobeacrobatreader)](WO_ES-IFS08-MainLite.pdf)
+[![Download Word Document](https://img.shields.io/badge/Work_Order-DOCX-blue?logo=microsoftword)](WO_ES-IFS08-MainLite.docx)
 [![Schematic PDF](https://img.shields.io/badge/Schematic-MAIN__LITE-blue?logo=adobeacrobatreader)](docs/MAIN_LITE_schematic.pdf)
 [![Interactive BOM](https://img.shields.io/badge/BOM-v1.1-blue)](docs/bom/MAIN_LITE_v1-1_BOM.html)
 [![Pin model](https://github.com/isc-fs/IFS08-ES-MainLite/actions/workflows/pin-model.yml/badge.svg?branch=dev)](docs/pin-model.md)
@@ -176,6 +178,9 @@ Format, versioning and how to consume it: [docs/pin-model.md](docs/pin-model.md)
 
 | Document | File Link | Description | Status |
 | :--- | :--- | :--- | :--- |
+| **Work Order (PDF)** | [📄 WO_ES-IFS08-MainLite.pdf](WO_ES-IFS08-MainLite.pdf) | Formal Work Order (`WO-IFS08-MLITE-001`): requirements, interfaces, verification protocol and QA sign-off sheet. | **Rev 1.0** |
+| **Work Order (DOCX)** | [📄 WO_ES-IFS08-MainLite.docx](WO_ES-IFS08-MainLite.docx) | Word source of the Work Order, on the ISC base template styles. | **Rev 1.0** |
+| **Markdown Specification** | [📄 WORK_ORDER_MAIN_LITE.md](docs/WORK_ORDER_MAIN_LITE.md) | Synchronized Markdown version of the Work Order for Git version control and quick online reference. | **Rev 1.0** |
 | **Schematic (PDF)** | [📄 MAIN_LITE_schematic.pdf](docs/MAIN_LITE_schematic.pdf) | Eeschema PDF export of the schematic. | **v1.1** |
 | **Interactive BOM** | [📄 MAIN_LITE_v1-1_BOM.html](docs/bom/MAIN_LITE_v1-1_BOM.html) | InteractiveHtmlBom export for assembly. | **v1.1** |
 | **Pin model** | [📄 pin-model.md](docs/pin-model.md) | Format and use of the generated pin model. | **Schema v1** |
@@ -192,7 +197,8 @@ IFS08-ES-MainLite/
 │   ├── bom/
 │   │   └── MAIN_LITE_v1-1_BOM.html    # Interactive BOM
 │   ├── MAIN_LITE_schematic.pdf        # Schematic PDF export
-│   └── pin-model.md                   # Pin model format & usage
+│   ├── pin-model.md                   # Pin model format & usage
+│   └── WORK_ORDER_MAIN_LITE.md        # Synchronized Markdown Work Order
 ├── IFS08-MainLite/                    # KiCad Project Files (KiCad 9.x)
 │   ├── Libraries/                     # Local symbols & footprints (BMI088, LD39200, LSM115J, switch, ISC logo, MainLite module)
 │   ├── production/                    # Fabrication outputs (Gerbers, BOM, CPL)
@@ -204,6 +210,8 @@ IFS08-ES-MainLite/
 ├── model/                             # GENERATED pin model (mainlite.pins.yaml / .json)
 ├── tests/                             # Pin model invariants (unittest)
 ├── tools/                             # gen_pins.py, kicad_export.sh, erc_summary.py, ST pin data
+├── WO_ES-IFS08-MainLite.pdf           # Official Work Order (PDF)
+├── WO_ES-IFS08-MainLite.docx          # Official Work Order (Word)
 ├── .gitignore                         # KiCad and OS Ignore Rules
 └── README.md                          # Repository Documentation
 ```
