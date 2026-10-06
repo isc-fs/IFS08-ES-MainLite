@@ -12,6 +12,7 @@ Hardware design, KiCad schematic and PCB layout of the **MainLite**, the minimal
 
 [![Schematic PDF](https://img.shields.io/badge/Schematic-MAIN__LITE-blue?logo=adobeacrobatreader)](docs/MAIN_LITE_schematic.pdf)
 [![Interactive BOM](https://img.shields.io/badge/BOM-v1.1-blue)](docs/bom/MAIN_LITE_v1-1_BOM.html)
+[![Pin model](https://github.com/isc-fs/IFS08-ES-MainLite/actions/workflows/pin-model.yml/badge.svg?branch=dev)](docs/pin-model.md)
 
 ---
 
@@ -159,24 +160,39 @@ Per-role use of these pins (which GPIO is which signal on the AMS, ECU or uDV ba
 
 ---
 
-## 4. Formal Design Documents & Reports
+## 4. Machine-Readable Pin Model
+
+[`model/mainlite.pins.yaml`](model/mainlite.pins.yaml) (JSON twin: [`mainlite.pins.json`](model/mainlite.pins.json)) lists all 144 pins of U5: net, alternate function, whether and where each one leaves the module on J3/J4, and what it connects to on the board. It also describes the CAN, SDMMC, I2C, HSE, VBAT, SWD and USB interfaces. `tools/gen_pins.py` generates it from the schematic; CI fails a PR whose committed model is stale or whose schematic has KiCad ERC errors. Each change that reaches `main` is published as a `pin-model-vX.Y` release, so other repos (e.g. the virtual HIL) can check their pin definitions against a pinned version.
+
+```bash
+python3 tools/gen_pins.py        # after any schematic change; commit model/
+```
+
+Format, versioning and how to consume it: [docs/pin-model.md](docs/pin-model.md).
+
+---
+
+## 5. Formal Design Documents & Reports
 
 | Document | File Link | Description | Status |
 | :--- | :--- | :--- | :--- |
 | **Schematic (PDF)** | [📄 MAIN_LITE_schematic.pdf](docs/MAIN_LITE_schematic.pdf) | Eeschema PDF export of the schematic. | **v1.1** |
 | **Interactive BOM** | [📄 MAIN_LITE_v1-1_BOM.html](docs/bom/MAIN_LITE_v1-1_BOM.html) | InteractiveHtmlBom export for assembly. | **v1.1** |
+| **Pin model** | [📄 pin-model.md](docs/pin-model.md) | Format and use of the generated pin model. | **Schema v1** |
 | **Fabrication outputs** | [📁 production/](IFS08-MainLite/production) | Gerbers/drill (`MAIN_LITE.zip`), BOM, CPL and IPC netlist as sent to fab. | **v1.1** |
 
 ---
 
-## 5. Repository Structure
+## 6. Repository Structure
 
 ```
 IFS08-ES-MainLite/
+├── .github/workflows/                 # CI: pin-model check + ERC, model release on main
 ├── docs/                              # Documentation
 │   ├── bom/
 │   │   └── MAIN_LITE_v1-1_BOM.html    # Interactive BOM
-│   └── MAIN_LITE_schematic.pdf        # Schematic PDF export
+│   ├── MAIN_LITE_schematic.pdf        # Schematic PDF export
+│   └── pin-model.md                   # Pin model format & usage
 ├── IFS08-MainLite/                    # KiCad Project Files (KiCad 9.x)
 │   ├── Libraries/                     # Local symbols & footprints (BMI088, LD39200, LSM115J, switch, ISC logo, MainLite module)
 │   ├── production/                    # Fabrication outputs (Gerbers, BOM, CPL)
@@ -185,6 +201,9 @@ IFS08-ES-MainLite/
 │   ├── MAIN_LITE.kicad_pro            # KiCad Project File
 │   ├── MAIN_LITE.kicad_sch            # Schematic
 │   └── MAIN_LITE.kicad_pcb            # PCB Layout
+├── model/                             # GENERATED pin model (mainlite.pins.yaml / .json)
+├── tests/                             # Pin model invariants (unittest)
+├── tools/                             # gen_pins.py, kicad_export.sh, erc_summary.py, ST pin data
 ├── .gitignore                         # KiCad and OS Ignore Rules
 └── README.md                          # Repository Documentation
 ```
@@ -193,7 +212,7 @@ IFS08-ES-MainLite/
 
 ---
 
-## 6. Author & Team Credits
+## 7. Author & Team Credits
 
 * **Subsystem:** Low Voltage & Electronics Subsystem (ES)
 * **Author & Technical Lead:** Raúl Morán
