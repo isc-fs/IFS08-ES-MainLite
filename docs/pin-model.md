@@ -125,7 +125,7 @@ Interfaces are derived from the netlist, not hand-written. If the schematic chan
 
 ## Using the model from another repo
 
-Consumers (for example `isc-fs/IFS_vHIL`, `catalog/boards/mainlite.yaml`) should:
+Consumers (for example `isc-fs/IFS-vHIL`, `catalog/boards/mainlite.yaml`) should:
 
 1. Fetch a **tagged** release (`pin-model-vX.Y`), check it against `SHA256SUMS`, and refuse any `schema_version` they don't support.
 2. For every pin a firmware or system description uses, look it up by `port` and check:
